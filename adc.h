@@ -14,6 +14,7 @@ void Display_Init(void);
 void Display(void);
 void ADC3_CH13_DMA_Config(void);
 void Convert_ADC_Voltage(void);
+void TimingDelay_Decrement(void);
 
 #endif /* __ADC_H */
 
