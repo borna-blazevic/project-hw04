@@ -498,11 +498,6 @@
               <FilePath>.\system_stm32f4xx.c</FilePath>
             </File>
             <File>
-              <FileName>mems.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\mems.c</FilePath>
-            </File>
-            <File>
               <FileName>adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\adc.c</FilePath>
@@ -516,11 +511,6 @@
               <FileName>main.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\main.h</FilePath>
-            </File>
-            <File>
-              <FileName>mems.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\mems.h</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_conf.h</FileName>

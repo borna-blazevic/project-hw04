@@ -137,4 +137,10 @@ void ADC3_CH13_DMA_Config(void)
   /* Enable ADC3 */
   ADC_Cmd(ADC3, ENABLE);
 }
-
+uint32_t L3GD20_TIMEOUT_UserCallback(void)
+{
+  return 0;
+}
+void TimingDelay_Decrement(void)
+{
+}
