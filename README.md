@@ -22,3 +22,7 @@ The temperature shows, around 25.6 degrees celsius which seems OK.
 FOR BOTH:
 
 Did not really get into the LCD, because it is not mentioned in the homework specification and exams are close, focused on trying to understand initialisation for ADC and MEMS components.
+
+FOR MASTER:
+
+The master branch does not compile.
