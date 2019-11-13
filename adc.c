@@ -5,7 +5,7 @@
 #define MESSAGE1_1 "continuouslyTransfer" 
 #define MESSAGE2   " ADC Ch13 Conv   "
 #define MESSAGE2_1 "    2.4Msps      "
-#define MESSAGE5   " ADC3 = %d,%1d V "
+#define MESSAGE5   " ADC3 = %d,%1d C "
 #define LINENUM            0x15
 #define FONTSIZE         Font12x12
 #define ADC3_DR_ADDRESS     ((uint32_t)0x4001224C)
@@ -26,10 +26,12 @@ void Convert_ADC_Voltage(void){
 void Display(void)
 {
   uint32_t uwVoltage =0, uwMVoltage=0;
+  uint32_t temperature;
   uint8_t aTextBuffer[50];
-  
-  uwVoltage = (uwADC3ConvertedVoltage)/1000;
-  uwMVoltage = (uwADC3ConvertedVoltage%1000)/100;
+	
+	temperature = (uwADC3ConvertedVoltage - 0.76);
+  uwVoltage = 25+(temperature/2500);
+  uwMVoltage = (temperature%2500)/100;
 
   sprintf((char*)aTextBuffer, MESSAGE5, uwVoltage, uwMVoltage);
   LCD_DisplayStringLine(LCD_LINE_6, (uint8_t*)aTextBuffer);
@@ -59,32 +61,15 @@ void Display_Init(void)
   LCD_SetTransparency(200);
   
   /* Clear the Foreground Layer */ 
-  LCD_Clear(LCD_COLOR_WHITE);
-  
-  /* Set the LCD Back Color and Text Color*/
-  LCD_SetBackColor(LCD_COLOR_BLUE);
-  LCD_SetTextColor(LCD_COLOR_WHITE);
-  
-    /* Set the LCD Text size */
-  LCD_SetFont(&FONTSIZE);
-  
-  /* Set the LCD Back Color and Text Color*/
-  LCD_SetBackColor(LCD_COLOR_BLUE);
-  LCD_SetTextColor(LCD_COLOR_WHITE);
-  
-  LCD_DisplayStringLine(LINE(LINENUM), (uint8_t*)MESSAGE1);
-  LCD_DisplayStringLine(LINE(LINENUM + 1), (uint8_t*)MESSAGE1_1);
-  LCD_DisplayStringLine(LINE(0x17), (uint8_t*)"                               ");
+  LCD_Clear(LCD_COLOR_BLACK);
   
   /* Set the LCD Text size */
   LCD_SetFont(&Font16x24);
   
-  LCD_DisplayStringLine(LCD_LINE_0, (uint8_t*)MESSAGE2);
-  LCD_DisplayStringLine(LCD_LINE_1, (uint8_t*)MESSAGE2_1);
   
   /* Set the LCD Back Color and Text Color*/
-  LCD_SetBackColor(LCD_COLOR_WHITE);
-  LCD_SetTextColor(LCD_COLOR_BLUE); 
+  LCD_SetBackColor(LCD_COLOR_BLACK);
+  LCD_SetTextColor(LCD_COLOR_GREEN);
 }
 
 void ADC3_CH13_DMA_Config(void)
