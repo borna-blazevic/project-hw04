@@ -502,11 +502,6 @@
               <FileType>1</FileType>
               <FilePath>.\mems.c</FilePath>
             </File>
-            <File>
-              <FileName>adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\adc.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -531,11 +526,6 @@
               <FileName>stm32f4xx_it.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\stm32f4xx_it.h</FilePath>
-            </File>
-            <File>
-              <FileName>adc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\adc.h</FilePath>
             </File>
           </Files>
         </Group>
